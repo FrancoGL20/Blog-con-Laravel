@@ -9,16 +9,28 @@
 
             <div class="form-group">
                 <label>Título</label>
-                <input type="text" name="title">
+                <input type="text" name="title" value="{{ old('title') }}">
             </div>
+            @error('title')
+                <div class="text-red-500  text-xs">{{ $message }}</div>
+            @enderror
+            
             <div class="form-group">
                 <label>Resumen</label>
-                <textarea name="excerpt" id="" cols="30" rows="4"></textarea>
+                <textarea name="excerpt" id="" cols="30" rows="4">{{ old('excerpt') }}</textarea>
             </div>
+            @error('excerpt')
+                <div class="text-red-500  text-xs">{{ $message }}</div>
+            @enderror
+
             <div class="form-group">
                 <label>Contenido</label>
-                <textarea name="content" id="" cols="30" rows="6"></textarea>
+                <textarea name="content" id="" cols="30" rows="6">{{ old('content') }}</textarea>
             </div>
+            @error('content')
+                <div class="text-red-500  text-xs">{{ $message }}</div>
+            @enderror
+
             <div>
                 <button type="submit" class="btn">Guardar</button>
             </div>
