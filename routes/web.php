@@ -17,7 +17,7 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
-Route::get('/', [HomeController::class, 'show']); // Ruta para mostrar el home (página de inicio)
+Route::get('/', [HomeController::class, 'show'])->name('inicio'); // Ruta para mostrar el home (página de inicio)
 
 Route::controller(PostsController::class)->group(function(){
     Route::get('/posts', 'index'); // Para obtener los posts

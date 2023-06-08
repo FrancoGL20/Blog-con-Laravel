@@ -31,7 +31,7 @@ class PostsController extends Controller
     {
         Post::create($request->only('title', 'excerpt', 'content'));
 
-        return redirect('/');
+        return redirect()->route('inicio');
     }
 
     /**
@@ -64,7 +64,7 @@ class PostsController extends Controller
     {
         $post->update($request->only('title', 'excerpt', 'content'));
 
-        return redirect('/');
+        return redirect()->route('inicio');
     }
 
     /**
@@ -74,6 +74,6 @@ class PostsController extends Controller
     {
         $post->delete();
 
-        return redirect('/');
+        return redirect()->route('inicio');
     }
 }
