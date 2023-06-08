@@ -1,4 +1,4 @@
-<x-app-layout header="Editar post">
+<x-dynamic-component :component="Auth::check() ? 'appLayout' : 'guestLayout' ">
     <x-slot name="header">Editar post</x-slot>
 
     <div class="w-1/2 mx-auto">
@@ -27,4 +27,4 @@
         </form>
     </div>
 
-</x-app-layout>
+</x-dynamic-component>

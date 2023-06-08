@@ -1,5 +1,6 @@
-<x-app-layout>
+<x-dynamic-component :component="Auth::check() ? 'appLayout' : 'guestLayout' ">
     <x-slot name="header">{{ $post->title }}</x-slot>
+    <x-slot name="design">false</x-slot>
 
     <div class="w-1/2 mx-auto">
         <article class="mt-5">
@@ -25,4 +26,4 @@
         </div>
     </div>
 
-</x-app-layout>
+</x-dynamic-component>

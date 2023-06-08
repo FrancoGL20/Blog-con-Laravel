@@ -1,5 +1,6 @@
-<x-guest-layout>
+<x-dynamic-component :component="Auth::check() ? 'appLayout' : 'guestLayout' ">
     <x-slot name="header">Bienvenidos</x-slot>
+    <x-slot name="design">false</x-slot>
 
     <div class="w-1/2 mx-auto">
 
@@ -14,4 +15,4 @@
 
     </div>
 
-</x-guest-layout>
+</x-dynamic-component>
