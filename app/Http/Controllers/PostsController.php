@@ -30,12 +30,6 @@ class PostsController extends Controller
      */
     public function store(PostRequest $request)
     {
-        $request->validate([
-            'title' => 'required|min:3|max:255',
-            'excerpt' => 'required|min:3|max:10',
-            'content' => 'required|min:3|max:15'
-        ]);
-
         Post::create($request->only('title', 'excerpt', 'content'));
 
         return redirect()->route('inicio');
