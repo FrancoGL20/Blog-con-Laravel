@@ -34,4 +34,4 @@ Route::controller(PostsController::class)->group(function(){
     Route::get('/posts/{post}', 'show'); // Para mostrar un post
 });
 
-Route::post('/posts/{post}/comments', [CommentsController::class, 'store']);
+Route::middleware('forbidden.words')->post('/posts/{post}/comments', [CommentsController::class, 'store']);
