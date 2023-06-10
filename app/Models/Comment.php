@@ -9,6 +9,12 @@ class Comment extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'name',
+        'content',
+        'post_id',
+    ];
+
     public function post()
     {
         // Un comentario pertenece a un post, el argumento es el nombre de la clase (modelo)
