@@ -1,5 +1,9 @@
 <x-dynamic-component :component="Auth::check() ? 'appLayout' : 'guestLayout' ">
-    <x-slot name="header">Editar post</x-slot>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+            Editar post
+        </h2>
+    </x-slot>
 
     <div class="w-1/2 mx-auto">
         <form class="mt-5" action="/posts/{{ $post->id }}" method="POST">
